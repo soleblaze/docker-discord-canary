@@ -3,7 +3,7 @@ Name=Discord Canary
 StartupWMClass=discord
 Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
 GenericName=Internet Messenger
-Exec=sh -c 'docker run --security-opt "seccomp=$HOME/.local/share/seccomp/discord-canary.json" -v /tmp/.X11-unix:/tmp/.X11-unix -v discordSettings:/home/discord -v /dev/shm:/dev/shm:z -v /var/run/dbus:/var/run/dbus -v "/var/run/user/$(id -u)/bus:/var/run/user/1000/bus" -e DBUS_SESSION_BUS_ADDRESS="unix:path=/var/run/user/1000/bus" -v "/var/run/user/$(id -u)/pulse:/var/run/user/1000/pulse" -e PULSE_SERVER="unix:/run/user/1000/pulse/native" -e "DISPLAY=unix$DISPLAY" --group-add "$(getent group audio | cut -d: -f3)" -e XDG_RUNTIME_DIR=/tmp -e "WAYLAND_DISPLAY=$WAYLAND_DISPLAY" -v "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY" --rm ghcr.io/soleblaze/discord:main'
+Exec=sh -c 'docker run --security-opt "seccomp=$HOME/.local/share/seccomp/discord-canary.json" -v /tmp/.X11-unix:/tmp/.X11-unix -v discordSettings:/home/discord -v /dev/shm:/dev/shm:z -v /var/run/dbus:/var/run/dbus -v "/var/run/user/$(id -u)/bus:/var/run/user/1000/bus" -e DBUS_SESSION_BUS_ADDRESS="unix:path=/var/run/user/1000/bus" -v "/var/run/user/$(id -u)/pulse:/var/run/user/1000/pulse" -e PULSE_SERVER="unix:/run/user/1000/pulse/native" -e "DISPLAY=unix$DISPLAY" --group-add "$(getent group audio | cut -d: -f3)" -e XDG_RUNTIME_DIR=/tmp -e "WAYLAND_DISPLAY=$WAYLAND_DISPLAY" -v "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY" --rm ghcr.io/soleblaze/discord-canary:main'
 Icon=discord-canary
 Type=Application
 Categories=Network;InstantMessaging;
